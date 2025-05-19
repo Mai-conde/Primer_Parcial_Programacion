@@ -533,3 +533,4 @@ def mostrar_datos_segun_legajo(indice:int, nombres:list, legajos:list, generos:l
     print(f"{nombres[indice]}\t {generos[indice]}\t {legajos[indice]}\t    {promedios[indice]}\t" , end="\t")
     
       
+#probando xd
