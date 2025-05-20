@@ -1,3 +1,6 @@
+from Validate_parcial import *
+
+
 def inicializar_matriz(cant_filas:int, cant_columnas:int, valor_inicial=0) -> list:
     '''  Documentación:
     Objetivo: Inicializar una matriz de n filas por m columnas.
