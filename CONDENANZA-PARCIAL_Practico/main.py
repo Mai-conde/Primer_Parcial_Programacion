@@ -72,23 +72,33 @@ def menu_de_opciones():
             case 2:
                 if datos_cargados == True:
                     mostrar_todos_los_estudiantes(nombres, generos, legajos, notas)
+                else:
+                    print("Error. No ha cargado los datos")
             case 3:
                 if datos_cargados == True:
                     promedios = promedio_notas(notas)
                     mostrar_lista(promedios)
+                else:
+                    print("Error. No ha cargado los datos")
             case 4:
                 if datos_cargados == True:
                     ordenar_lista(promedios,nombres,generos,legajos)
                     mostrar_datos(nombres,promedios,generos,legajos) 
+                else:
+                    print("Error. No ha cargado los datos")
             case 5:
                 if datos_cargados == True:
                     promedios_de_materias = promedios_materias(notas)
                     mostrar_materia_mayor_promedio(promedios_de_materias)
+                else:
+                    print("Error. No ha cargado los datos")
             case 6: 
                 if datos_cargados == True:
                     indice_buscado = buscar_por_legajo(legajos)
                     if indice_buscado != -1:
                         mostrar_datos_segun_legajo(indice_buscado,nombres,legajos,generos,promedios)
+                else:
+                    print("Error. No ha cargado los datos")
             case 7:
                 break
             case _:
