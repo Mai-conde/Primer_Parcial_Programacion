@@ -35,6 +35,9 @@ notas = [[6,5,7,4,5],
          [7,5,7,7,8]]
 
 def menu_de_opciones():
+
+    datos_cargados = False
+
     while True:
         print("-----------------------------------------------------------------------------------------------------------------------------")
         eleccion = input("\nIngrese un número para realizar una función: \n [1] para ingresar todos los datos\n "
