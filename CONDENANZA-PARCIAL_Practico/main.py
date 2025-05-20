@@ -1,6 +1,6 @@
 from funciones_parcial import *
 
-nombres = ["Maite","Diego","Pedro","Lara","Martin","Sofia","Marta","Arturo","Rafael","Kira","Mirta","Beto","Julio","Fabian","Tomas","Maria","Paloma","Malena","Lucas","Mateo","Roman","Daniel","Luna","Paula","Alma","Luz","Paz","Erica","Adrian","Delia"]
+'''nombres = ["Maite","Diego","Pedro","Lara","Martin","Sofia","Marta","Arturo","Rafael","Kira","Mirta","Beto","Julio","Fabian","Tomas","Maria","Paloma","Malena","Lucas","Mateo","Roman","Daniel","Luna","Paula","Alma","Luz","Paz","Erica","Adrian","Delia"]
 generos = ["F","M","M","X","M","F","F","M","X","X","F","M","M","M","X","F","F","F","M","M","X","X","F","F","F","X","X","F","M","F"]
 legajos = ["11111", "12111","11211","11121","11112","21111","21211","21121","21112","31111","32111","31211","31121","31112","33111","31311","31131","31113","41111","42111","41211","41121","41112","43111","43211","41311","41131","41113","41132","41321",]
 notas = [[6,5,7,4,5],
@@ -32,7 +32,7 @@ notas = [[6,5,7,4,5],
          [6,7,5,9,1],
          [5,7,8,4,9],
          [7,4,10,6,1],
-         [7,5,7,7,8]]
+         [7,5,7,7,8]]'''
 
 def menu_de_opciones():
 
@@ -66,11 +66,11 @@ def menu_de_opciones():
 
         match eleccion:
             case 1: 
-                '''matriz_datos = cargar_datos_estudiantes()
+                matriz_datos = cargar_datos_estudiantes(3)
                 nombres = matriz_datos[1]
                 generos = matriz_datos[2]
                 legajos = matriz_datos[3]
-                notas = matriz_datos[4]'''
+                notas = matriz_datos[4]
                 datos_cargados = True
             case 2:
                 if datos_cargados == True:
