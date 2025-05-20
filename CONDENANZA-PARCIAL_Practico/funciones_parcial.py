@@ -84,15 +84,6 @@ def validate_str(cadena) -> bool:
             flag = False
     return flag
 
-'''def carga_nombre_estudiantes(cant_estudiantes=30) -> list:
-    estudiantes = inicializar_lista(cant_estudiantes)
-    for i in range(len(estudiantes)):
-        estudiante = input(f"Ingrese el estudiante numero {i + 1}: ")
-        while validate_str(estudiante) == False:
-            estudiante = input(f"Error. Ingrese un estudiante válido: ")
-        estudiantes[i] = estudiante
-    return estudiantes'''
-
 def validate_genero(genero:str) -> bool:
     '''Documentación:
     Objetivo: validar un genero
@@ -106,16 +97,6 @@ def validate_genero(genero:str) -> bool:
     if genero != "F" and genero != "M" and genero != "X":
         flag = False
     return flag
-
-'''def carga_genero_estudiante(cant_estudiantes=30) -> list:
-    
-    generos = inicializar_lista(cant_estudiantes)
-    for i in range(len(generos)):
-        genero = input(f"Ingrese el género (F, M, X) del estudiante numero {i + 1}: ")
-        while validate_genero(genero) == False:
-            genero = input(f"Error. Ingrese un género válido: ")
-        generos[i] = genero
-    return generos'''
 
 def validate_legajo(legajo:str) -> bool:
     '''Documentación:
@@ -135,15 +116,6 @@ def validate_legajo(legajo:str) -> bool:
             flag = False
     return flag
 
-'''def carga_legajo_estudiante(cant_estudiantes=30) -> list:
-    legajos = inicializar_lista(cant_estudiantes)
-    for i in range(len(legajos)):
-        legajo = input(f"Ingrese el legajo (numero de cinco difras) del estudiante numero {i + 1}: ")
-        while validate_legajo(legajo) == False:
-            legajo = input(f"Error. Ingrese un legajo válido: ")
-        legajos[i] = legajo
-    return legajos'''
-
 def validate_nota(nota) -> bool:
     '''Documentación:
     Objetivo: validar una nota
@@ -156,37 +128,6 @@ def validate_nota(nota) -> bool:
     if nota > 10 or nota < 1:
         flag = False
     return flag
-
-'''def carga_notas_matriz(filas=30, columnas=5):
-    matriz = inicializar_matriz(filas,columnas)
-    for i in range(len(matriz)):
-        for j in range(len(matriz[i])):
-            matriz[i][j] = int(input(f"Ingrese la nota de la materia {j + 1} del estudiante {i + 1}: "))
-            while validate_nota(matriz[i][j]) == False:
-                matriz[i][j] = int(input(f"Error, ingrese una nota válida entre 1 y 10: "))
-            mostrar_matriz(matriz)
-    print("La carga de notas ha sido completada")
-    mostrar_matriz(matriz)
-'''
-
-'''def carga_todos_los_datos(nombres,generos,legajos,notas):
-    dato_a_cargar = int(input("Eliga el numero de la opcion para cargar \n'1-nombres, 2-genero, 3-legajo, 4-notas): "))
-    match dato_a_cargar:
-        case 1:
-            nombres = carga_nombre_estudiantes()
-            mostrar_lista(nombres)
-        case 2:
-            generos = carga_genero_estudiante()
-            mostrar_lista(generos)
-        case 3:
-            legajos = carga_legajo_estudiante()
-            mostrar_lista(legajos)
-        case 4: 
-            notas = carga_notas_matriz()
-            mostrar_matriz(notas)
-        case _:
-            dato_a_cargar = int(input("Error, seleccione un número válido entre \n'1-nombres, 2-genero, 3-legajo, 4-notas): "))'''
-
 
 def cargar_datos_estudiantes(cantidad_estudiantes=30) -> list:
     '''Documentación:
@@ -532,5 +473,3 @@ def mostrar_datos_segun_legajo(indice:int, nombres:list, legajos:list, generos:l
         '''   
     print(f"{nombres[indice]}\t {generos[indice]}\t {legajos[indice]}\t    {promedios[indice]}\t" , end="\t")
     
-      
-#probando xd
