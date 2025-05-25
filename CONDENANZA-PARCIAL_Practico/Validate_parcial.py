@@ -76,6 +76,7 @@ def validate_nota(nota) -> bool:
     return flag
 
 def validate_criterio(criterio:str) -> bool:
+
     '''  Documentación:
     Objetivo: validar un criterio
 
@@ -87,4 +88,16 @@ def validate_criterio(criterio:str) -> bool:
     flag = True
     if criterio != "desc" and criterio != "DESC" and criterio != "ASC" and criterio != "asc":
         flag = False
+    return flag
+
+
+
+def validate_numero_materia(numero_materia):
+    flag = True
+    if validate_number(numero_materia) == False:
+        flag = False
+    else:
+        numero_materia = int(numero_materia)
+        if numero_materia > 5 or numero_materia < 1:
+            flag = False
     return flag

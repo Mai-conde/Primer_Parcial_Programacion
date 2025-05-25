@@ -28,8 +28,8 @@ def inicializar_lista(cant_elementos:int,valor_inicial = 0) -> list:
         list: retorna la lista inicializada'''
     
     lista = [valor_inicial] * cant_elementos
-    for i in range(cant_elementos):
-        lista[i] = i
+    '''for i in range(cant_elementos):
+        lista[i] = i'''
     
     return lista
 
@@ -253,6 +253,51 @@ def ordenar_lista(promedio:list, nombre:list, genero:list, legajo:list, criterio
         else:
             ordenar_asc(promedio,nombre,genero,legajo)
 
+def copiar_nombres(nombres:list)->list:
+    nombres_originales = inicializar_lista(len(nombres))
+
+    for i in range(len(nombres)):
+        nombres_originales[i] = nombres[i]
+    
+    return nombres_originales
+
+def copiar_generos(generos:list)->list:
+    generos_originales = inicializar_lista(len(generos))
+
+    for i in range(len(generos)):
+        generos_originales[i] = generos[i]
+    
+    return generos_originales
+
+def copiar_legajos(legajos:list)->list:
+    legajos_originales = inicializar_lista(len(legajos))
+
+    for i in range(len(legajos)):
+        legajos_originales[i] = legajos[i]
+    
+    return legajos_originales
+
+def copiar_promedios(promedios:list)->list:
+    promedios_originales = inicializar_lista(len(promedios))
+
+    for i in range(len(promedios)):
+        promedios_originales[i] = promedios[i]
+    
+    return promedios_originales
+
+def copiar_notas(notas:list)->list:
+    notas_originales = inicializar_matriz(len(notas),len(notas[0]))
+
+    for i in range(len(notas)):
+        for j in range(len(notas[i])):
+            notas_originales[i][j] = notas[i][j]
+
+    
+    return notas_originales
+        
+        
+
+
 def promedios_materias(notas:list) -> list:
     '''Documentación:
     Objetivo: calcular el promedio de las notas por materia
@@ -385,3 +430,32 @@ def mostrar_datos_segun_legajo(indice:int, nombres:list, legajos:list, generos:l
         '''   
     print(f"{nombres[indice]}\t {generos[indice]}\t {legajos[indice]}\t    {promedios[indice]}\t" , end="\t")
     
+'''Buscar y mostrar cuantas veces se repite cada calificación en una asignatura determinada.
+Realizar una función que reciba la matriz de calificaciones y el número de materia (índice más uno) como
+parámetros, y retorne una lista de 10 elementos, donde en el índice 0 estará la cantidad de veces que se repite la
+nota 1, en el índice 1 estará la cantidad de veces que se repite la nota 2, y así sucesivamente hasta el índice 9
+donde estará la cantidad de veces que se repite la nota 10.'''
+
+
+
+def iteraciones_de_notas(notas:list, numero_de_materia:int) -> list:
+
+    iteraciones = inicializar_lista(10)
+    indice_materia = numero_de_materia - 1 
+    for i in range(len(notas)):
+        nota = notas[i][indice_materia]
+        iteraciones[nota -1] += 1
+
+    return iteraciones
+
+
+notas = [
+    [7, 8, 9],
+    [6, 8, 10],
+    [7, 7, 9],
+    [6, 8, 10],
+    [1, 8, 9]
+]
+
+
+#print(iteraciones_de_notas(notas,3))
