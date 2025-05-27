@@ -100,9 +100,10 @@ def cargar_datos_estudiantes(cantidad_estudiantes=30) -> list:
         j += 1
 
         for k in range(5):
-            nota = int(input(f"Ingrese la nota {k+1}: "))
+            nota = input(f"Ingrese la nota {k+1}: ")
             while validate_nota(nota) == False:
-                nota = int(input(f"Error, nota inválida. Ingrese la nota {k+1} nuevamente (entre el 1 y el 10): "))
+                nota = input(f"Error, nota inválida. Ingrese la nota {k+1} nuevamente (entre el 1 y el 10): ")
+            nota = int(nota)
             matriz[i][j] = nota
             notas[i][k] = nota
             j += 1
@@ -253,51 +254,41 @@ def ordenar_lista(promedio:list, nombre:list, genero:list, legajo:list, criterio
         else:
             ordenar_asc(promedio,nombre,genero,legajo)
 
-def copiar_nombres(nombres:list)->list:
-    nombres_originales = inicializar_lista(len(nombres))
+def copiar_lista(lista: list) -> list:
+    '''Documentación:
+    Objetivo: hacer una copiar de una lista 
 
-    for i in range(len(nombres)):
-        nombres_originales[i] = nombres[i]
+    Parámetros:
+        lista (list): lista a copiar
     
-    return nombres_originales
-
-def copiar_generos(generos:list)->list:
-    generos_originales = inicializar_lista(len(generos))
-
-    for i in range(len(generos)):
-        generos_originales[i] = generos[i]
+    Retorna:
+        list: la copia de la lista original
+        '''
+    lista_original = inicializar_lista(len(lista))
+    for i in range(len(lista)):
+        lista_original[i] = lista[i]
     
-    return generos_originales
+    return lista_original
 
-def copiar_legajos(legajos:list)->list:
-    legajos_originales = inicializar_lista(len(legajos))
+def copiar_matriz(matriz:list)->list:
+    '''Documentación:
+    Objetivo: hacer una copiar de una matriz
 
-    for i in range(len(legajos)):
-        legajos_originales[i] = legajos[i]
+    Parámetros:
+        matriz (list): matriz a copiar
     
-    return legajos_originales
+    Retorna:
+        list: la copia de la matriz original
+        '''
+    matriz_original = inicializar_matriz(len(matriz),len(matriz[0]))
 
-def copiar_promedios(promedios:list)->list:
-    promedios_originales = inicializar_lista(len(promedios))
-
-    for i in range(len(promedios)):
-        promedios_originales[i] = promedios[i]
-    
-    return promedios_originales
-
-def copiar_notas(notas:list)->list:
-    notas_originales = inicializar_matriz(len(notas),len(notas[0]))
-
-    for i in range(len(notas)):
-        for j in range(len(notas[i])):
-            notas_originales[i][j] = notas[i][j]
+    for i in range(len(matriz)):
+        for j in range(len(matriz[i])):
+            matriz_original[i][j] = matriz[i][j]
 
     
-    return notas_originales
+    return matriz_original
         
-        
-
-
 def promedios_materias(notas:list) -> list:
     '''Documentación:
     Objetivo: calcular el promedio de las notas por materia
@@ -338,7 +329,7 @@ def indice_mayor_promedio_por_materia(promedios:list) -> list:
             contador += 1
     return posiciones
 
-def lista_mayor_promedio(promedios:list):
+def lista_mayor_promedio(promedios:list) -> list:
     '''Documentación:
     Objetivo: crear una nueva lista que solo guarde los indices correspondientes a las materias con mayor promedio
 
@@ -417,7 +408,7 @@ def mostrar_datos_segun_legajo_con_notas(indice:int, nombres:list, legajos:list,
         print(nota, end=" ")
     print() 
     
-def mostrar_datos_segun_legajo(indice:int, nombres:list, legajos:list, generos:list, promedios:list):
+def mostrar_datos_segun_legajo(indice:int, nombres:list, legajos:list, generos:list, promedios:list) -> None:
     '''Documentación:
     Objetivo: mostrar los datos del estudiantes segun el legajo buscado
 
@@ -429,17 +420,19 @@ def mostrar_datos_segun_legajo(indice:int, nombres:list, legajos:list, generos:l
         promedios (list): lista de promedios
         '''   
     print(f"{nombres[indice]}\t {generos[indice]}\t {legajos[indice]}\t    {promedios[indice]}\t" , end="\t")
-    
-'''Buscar y mostrar cuantas veces se repite cada calificación en una asignatura determinada.
-Realizar una función que reciba la matriz de calificaciones y el número de materia (índice más uno) como
-parámetros, y retorne una lista de 10 elementos, donde en el índice 0 estará la cantidad de veces que se repite la
-nota 1, en el índice 1 estará la cantidad de veces que se repite la nota 2, y así sucesivamente hasta el índice 9
-donde estará la cantidad de veces que se repite la nota 10.'''
-
-
 
 def iteraciones_de_notas(notas:list, numero_de_materia:int) -> list:
+    '''Documentación:
+    Objetivo: contar la cantidad de veces que se repite una nota en una materia
 
+    Parámetros:
+        notas (list): matriz a copiar
+        numero_de_materia (int): numero de la materia que se deasea contar las notas
+    
+    Retorna:
+        list: La lista que contiene la cantidad de veces que se repite una nota en una materia 
+        '''
+    
     iteraciones = inicializar_lista(10)
     indice_materia = numero_de_materia - 1 
     for i in range(len(notas)):
@@ -448,14 +441,3 @@ def iteraciones_de_notas(notas:list, numero_de_materia:int) -> list:
 
     return iteraciones
 
-
-notas = [
-    [7, 8, 9],
-    [6, 8, 10],
-    [7, 7, 9],
-    [6, 8, 10],
-    [1, 8, 9]
-]
-
-
-#print(iteraciones_de_notas(notas,3))

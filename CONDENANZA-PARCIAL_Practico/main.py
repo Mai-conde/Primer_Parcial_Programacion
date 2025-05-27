@@ -53,7 +53,8 @@ def menu_de_opciones():
         "[5] para mostrar la/las materias con mayor promedio general \n" \
         "[6] para buscar y mostrar todos los datos por legajo \n" \
         "[7] para mostrar la cantidad de veces que se repite una nota en una materia determinada  \n " \
-        "[8] para salir del programa:  ")
+        "[8] para salir del programa" \
+        "->  ")
         print()
         print("-----------------------------------------------------------------------------------------------------------------------------")
 
@@ -66,7 +67,8 @@ def menu_de_opciones():
             "[5] para mostrar la/las materias con mayor promedio general \n" \
             "[6] para buscar y mostrar todos los datos por legajo \n" \
             "[7] para mostrar la cantidad de veces que se repite una nota en una materia determinada  \n " \
-            "[7] para salir del programa:  ")
+            "[8] para salir del programa" \
+            "->   ")
             print()
             print("-----------------------------------------------------------------------------------------------------------------------------")
         
@@ -74,12 +76,13 @@ def menu_de_opciones():
 
         match eleccion:
             case 1: 
-                '''matriz_datos = cargar_datos_estudiantes()
+                matriz_datos = cargar_datos_estudiantes(2)
                 nombres = matriz_datos[1]
                 generos = matriz_datos[2]
                 legajos = matriz_datos[3]
-                notas = matriz_datos[4]'''
+                notas = matriz_datos[4]
                 datos_cargados = True
+                print("\nLOS DATOS SE HAN CARGADO CORRECTAMENTE\n")
             case 2:
                 if datos_cargados == True:
                     if lista_ordenada == True:
@@ -91,25 +94,29 @@ def menu_de_opciones():
             case 3:
                 if datos_cargados == True:
                     promedios = promedio_notas(notas)
+                    print("PROMEDIOS DE CADA ESTUDIANTE\n\n")
                     mostrar_lista(promedios)
                     promedio_calculado = True
                 else:
                     print("Error. No ha cargado los datos")
             case 4:
                 if datos_cargados == True and promedio_calculado == True:
-                    nombres_originales = copiar_nombres(nombres)
-                    legajos_originales = copiar_legajos(legajos)
-                    generos_originales = copiar_generos(generos)
-                    promedios_originales = copiar_promedios(promedios)
-                    notas_originales = copiar_notas(notas)
+                    nombres_originales = copiar_lista(nombres)
+                    legajos_originales = copiar_lista(legajos)
+                    generos_originales = copiar_lista(generos)
+                    promedios_originales = copiar_lista(promedios)
+                    notas_originales = copiar_matriz(notas)
                     ordenar_lista(promedios,nombres,generos,legajos)
                     lista_ordenada = True
+                    print("PROMEDIOS ORDENADOS\n\n")
                     mostrar_datos(nombres,promedios,generos,legajos) 
+
                 else:
                     print("Error. No ha cargado los datos o no se ha calculado el promedio")
             case 5:
                 if datos_cargados == True and promedio_calculado == True:
                     promedios_de_materias = promedios_materias(notas)
+                    print("PROMEDIO MAYOR ENTRE LAS MATERIAS \n\n")
                     mostrar_materia_mayor_promedio(promedios_de_materias)
                 else:
                     print("Error. No ha cargado los datos o no se ha calculado el promedio")
@@ -127,6 +134,7 @@ def menu_de_opciones():
                         numero_de_materia = input("Ingrese el numero de materia en la que desea contar las notas: ")
                     numero_de_materia = int(numero_de_materia)
                     lista_notas = iteraciones_de_notas(notas,numero_de_materia)
+                    print(F"CANTIDAD DE VECES QUE SE REPITE UNA NOTA EN LA MATERIA {numero_de_materia} \n\n")
                     mostrar_lista(lista_notas)
                 else:
                     print("Error. No ha cargado los datos o no se ha calculado el promedio")

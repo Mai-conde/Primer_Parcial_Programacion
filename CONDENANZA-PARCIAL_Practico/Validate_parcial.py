@@ -62,21 +62,24 @@ def validate_legajo(legajo:str) -> bool:
             flag = False
     return flag
 
-def validate_nota(nota) -> bool:
+def validate_nota(nota:str) -> bool:
     '''Documentación:
     Objetivo: validar una nota
 
     Parámetros:
-        nota (Any): nota a validar
+        nota (str): nota a validar
     Retorno:
         bool: retorna True si es una nota, y False si no lo es'''
     flag = True
-    if nota > 10 or nota < 1:
+    if validate_number(nota) == False:
         flag = False
+    else:
+        nota = int(nota)
+        if nota > 10 or nota < 1:
+            flag = False
     return flag
 
 def validate_criterio(criterio:str) -> bool:
-
     '''  Documentación:
     Objetivo: validar un criterio
 
@@ -90,9 +93,15 @@ def validate_criterio(criterio:str) -> bool:
         flag = False
     return flag
 
+def validate_numero_materia(numero_materia:str) -> bool:
+    '''  Documentación:
+    Objetivo: validar un número de materia
 
-
-def validate_numero_materia(numero_materia):
+    Parámetros:
+        numero_materia (str): criterio a validar
+    Retorno:
+        bool: retorna True si es un número de materia válido, y False si no lo es'''
+     
     flag = True
     if validate_number(numero_materia) == False:
         flag = False
