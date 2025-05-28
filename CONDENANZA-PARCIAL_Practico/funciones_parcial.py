@@ -42,7 +42,7 @@ def mostrar_matriz(matriz:list) -> None:
     
     for i in range(len(matriz)):
         for j in range(len(matriz[i])):
-            print(matriz[i][j], end = " ")
+            print(matriz[i][j], end = "  ")
         print("")
 
 def mostrar_lista(lista:list) -> None:
@@ -126,7 +126,7 @@ def mostrar_un_estudiante(nombres:list, generos:list, legajos:list, notas:list, 
     
     print(f"{nombres[numero_estudiante]}\t  {generos[numero_estudiante]}\t  {legajos[numero_estudiante]} \t" , end="")
     for nota in notas[numero_estudiante]:
-        print(nota, end=" ")
+        print(nota, end="   ")
     print()
 
 def mostrar_todos_los_estudiantes(nombres:list, generos:list, legajos:list, notas:list) -> None:

@@ -2,6 +2,9 @@ from funciones_parcial import *
 
 from Validate_parcial import *
 
+#SI DESEA CARGAR LOS DATOS MANUALMENTE SOLO EJECUTELO.
+#SI DESEA PROBAR EL PROGRAMA PARA SU FUNCIONALIDAD SIN CARGAR LOS DATOS MANUALMENTE, DEBE COMENTAR DESDE LAS LINEAS 82 A 86. 
+
 nombres = ["Maite","Diego","Pedro","Lara","Martin","Sofia","Marta","Arturo","Rafael","Kira","Mirta","Beto","Julio","Fabian","Tomas","Maria","Paloma","Malena","Lucas","Mateo","Roman","Daniel","Luna","Paula","Alma","Luz","Paz","Erica","Adrian","Delia"]
 generos = ["F","M","M","X","M","F","F","M","X","X","F","M","M","M","X","F","F","F","M","M","X","X","F","F","F","X","X","F","M","F"]
 legajos = ["11111", "12111","11211","11121","11112","21111","21211","21121","21112","31111","32111","31211","31121","31112","33111","31311","31131","31113","41111","42111","41211","41121","41112","43111","43211","41311","41131","41113","41132","41321",]
@@ -54,7 +57,7 @@ def menu_de_opciones():
         "[6] para buscar y mostrar todos los datos por legajo \n" \
         "[7] para mostrar la cantidad de veces que se repite una nota en una materia determinada  \n " \
         "[8] para salir del programa" \
-        "->  ")
+        " ->  ")
         print()
         print("-----------------------------------------------------------------------------------------------------------------------------")
 
@@ -68,7 +71,7 @@ def menu_de_opciones():
             "[6] para buscar y mostrar todos los datos por legajo \n" \
             "[7] para mostrar la cantidad de veces que se repite una nota en una materia determinada  \n " \
             "[8] para salir del programa" \
-            "->   ")
+            " ->   ")
             print()
             print("-----------------------------------------------------------------------------------------------------------------------------")
         
