@@ -76,7 +76,7 @@ def menu_de_opciones():
 
         match eleccion:
             case 1: 
-                matriz_datos = cargar_datos_estudiantes(2)
+                matriz_datos = cargar_datos_estudiantes()
                 nombres = matriz_datos[1]
                 generos = matriz_datos[2]
                 legajos = matriz_datos[3]
